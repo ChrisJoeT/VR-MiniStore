@@ -6,7 +6,7 @@ VR MiniStore E-Commerce Website | College Main Project
 ![Untitled design](https://github.com/ChrisJoeT/VR-MiniStore/assets/94181368/b48a7d8a-7a6a-4874-8623-5e4e66a18a2f)
 
 
-The objective of this project is to develop a comprehensive e-commerce website dedicated to VR gadgets. The website will provide a platform for users to browse, search, and purchase a wide range of VR devices, including Apple Vision VR Headset, Google XR Headset, Meta Quest Pro VR Headset, HTC Vive Focus 3 VR Headset, and other accessories.
+This project aims to develop a fully functional E-Commerce website using Python Django Framework, HTML, CSS, and SQLite. This project aims to create a comprehensive e-commerce website dedicated to VR gadgets. The website will provide a platform for users to browse, search, and purchase a wide range of VR devices, including Apple Vision VR Headset, Google XR Headset, Meta Quest Pro VR Headset, HTC Vive Focus 3 VR Headset, and other accessories.
 
 Features : 
 
@@ -19,7 +19,7 @@ Features :
 - Product details including descriptions, specifications, prices, and customer reviews.
 3. Search and Filters:
 - Powerful search functionality for users to find products quickly.
-- Filters to narrow down search results based on criteria like brand, price range, ratings, etc.
+- Filters to narrow search results based on criteria like brand, price range, ratings, etc.
 4. Shopping Cart:
 - An intuitive shopping cart system to add and manage selected items.
 - Real-time updates on the total price and quantity.
