@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Product Details</title>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="{% static 'af/assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="{% static 'af/assets/css/font-awesome.css' %}" rel="stylesheet" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="{% static 'af/assets/css/basic.css' %}" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="{% static 'af/assets/css/custom.css' %}" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/sap/">ADMIN PAGE</a>
+            </div>
+
+            <div class="header-right">
+
+
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+         <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+
+                            <div class="inner-text">
+                                 Welcome Admin
+                           </div>
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <a class="active-menu" href="/sap/"><i class="fa fa-dashboard "></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/adp/"><i class="fa fa-bicycle "></i>Add Products <span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="/ap/"><i class="fa fa-flash "></i>List Products</a>
+
+                    </li>
+                    <li>
+                        <a href="/inv/"><i class="fa fa-flash "></i>Invoice</a>
+
+                    </li>
+                       <li>
+                        <a href="/adms/"><i class="fa fa-yelp "></i>Sales History <span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="/passs/"><i class="fa fa-sign-in "></i>Change Password</a>
+                    </li>
+                    <li>
+                        <a href="/h/"><i class="fa fa-sign-in "></i>Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Product Details</h1>
+                        <h1 class="page-subhead-line"></h1>
+
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+            <div class="row">
+                <div class="col-md-12">
+                  <!--   Kitchen Sink -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                   <tr>
+								<th>Sales No</th>
+						        <th>Slno</th>
+								<th>Product Name</th>
+						         <th>Rate</th>
+							 	<th>&nbsp;Qty in No</th>
+								<th>&nbsp;Total</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  {% for j in mrec %}
+						    <tr class="alert" role="alert">
+						    	<td>{{j.salesno}}</td>
+								<td>{{j.slno}} </td>
+						      <td>
+						      {{j.pname}}
+						      </td>
+							  <td>{{j.rate}}</td>
+						      <td >
+								  {{ j.qty }}
+				              </td>
+						      <td>
+						      	{{j.total}}
+				        	  </td>
+						    </tr>
+
+                               {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- End  Kitchen Sink -->
+                </div>
+                      <!-- End  Basic Table  -->
+            </div>
+            </div>
+                <!-- /. ROW  -->
+
+                <!-- /. ROW  -->
+
+                <!-- /. ROW  -->
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <div id="footer-sec">
+       <p>
+          &copy; 2024 <span id="displayYear"></span> All Rights Reserved By
+          <a href="#">MiniStore</a>.
+        </p>
+    </div>
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="{% static 'af/assets/js/jquery-1.10.2.js' %}"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="{% static 'af/assets/js/bootstrap.js' %}"></script>
+     <!-- METISMENU SCRIPTS -->
+    <script src="{% static 'af/assets/js/jquery.metisMenu.js' %}"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{% static 'af/assets/js/custom.js' %}"></script>
+
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,184 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'order/css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'order/css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'order/css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'order/images/fevicon.png' %}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'order/css/jquery.mCustomScrollbar.min.css' %}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'order/images/loading.gif' %}" alt="#" /></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header-top">
+            <div class="header">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                        <div class="full">
+                           <div class="center-desk">
+                              <div class="logo">
+                                 <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+  <head>
+  	<title>My Orders</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'order/css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-4">
+					<h2 class="heading-section">PURCHASE DETAILS </h2>
+				</div>
+			</div>
+			<form method="post" enctype="multipart/form-data" action="/sup/">
+				{% csrf_token %}
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="h5 mb-4 text-center">Invoice's</h3>
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						        <th>Salesno</th>
+						        <th>Sales Date</th>
+								<th>Customer Name</th>
+						        <th>Shipment Address</th>
+						         <th>&nbsp;Card No</th>
+							 	<th>&nbsp;Total Amount</th>
+                                <th>&nbsp;Current Status</th>
+								<th>&nbsp;Action</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  {% for j in mrec %}
+						    <tr class="alert" role="alert">
+						    	<td>
+									{{j.salesno}}
+								</td>
+						      <td>
+						      {{j.salesdate}}
+						      </td>
+						      <td>{{j.uname}}</td>
+							  <td>{{j.shipment}}</td>
+						      <td >
+								  {{ j.cardno }}
+				          </td>
+
+						      <td>
+						      	{{j.total}}
+				        	</td>
+                                  <td>
+						      	{{j.status}}
+				        	</td>
+								<td>
+									<a href="/ms/{{j.salesno}}" >More Details</a>
+								</td>
+
+
+
+						    </tr>
+
+{% endfor %}
+					  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<center>	<button type="submit">BACK</button></center>
+			</form>
+		</div>
+	</section>
+
+	<script src="{% static 'order/jquery.min.js' %}"></script>
+  <script src="{% static 'order/js/popper.js' %}"></script>
+  <script src="{% static 'order/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'order/js/main.js' %}"></script>
+
+	</body>
+</html>
+
+
+
+
+
+      <footer>
+         <div class="footer">
+
+            <div class="copyright">
+               <div class="container">
+                  <p>© 2024 All Rights Reserved to <a href="#">MiniStore</a>.</p>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/popper.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'js/plugin.js' %}"></script>
+      <!-- sidebar -->
+      <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+      <script src="{% static 'js/custom.js' %}"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+   </body>
+</html>
+
+
+
+
+
+
+
+

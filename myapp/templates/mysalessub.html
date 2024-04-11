@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 06</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'order/css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-4">
+					<h2 class="heading-section">PURCHASE DETAILS </h2>
+				</div>
+			</div>
+			<form method="post" enctype="multipart/form-data" action="/myp/">
+				{% csrf_token %}
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="h5 mb-4 text-center">invoices</h3>
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+								<th>Sales No</th>
+						        <th>Slno</th>
+								<th>Product Name</th>
+						         <th>Rate</th>
+							 	<th>&nbsp;Qty in No</th>
+								<th>&nbsp;Total</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  {% for j in mrec %}
+						    <tr class="alert" role="alert">
+						    	<td>
+									{{j.salesno}}
+								</td>
+								<td>
+									{{j.slno}}
+								</td>
+						      <td>
+						      {{j.pname}}
+						      </td>
+							  <td>{{j.rate}}</td>
+						      <td >
+								  {{ j.qty }}
+				              </td>
+						      <td>
+						      	{{j.total}}
+				        	  </td>
+						    </tr>
+
+{% endfor %}
+					  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+				<button type="submit">BACK</button>
+			</form>
+		</div>
+	</section>
+
+	<script src="{% static 'order/jquery.min.js' %}"></script>
+  <script src="{% static 'order/js/popper.js' %}"></script>
+  <script src="{% static 'order/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'order/js/main.js' %}"></script>
+
+	</body>
+</html>
+

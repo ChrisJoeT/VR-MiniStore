@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Product Details</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'product/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'product/vendor/jquery-ui/jquery-ui.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'product/css/style.css' %}">
+</head>
+<body>
+
+    <h2>ADD PRODUCT DETAILS</h2>
+    <div class="main">
+
+        <section class="signup">
+             <img src="images/signup-bg.jpg" alt="">
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="product_type">Product ID</label>
+                                <input type="text" class="form-input" name="prid" id="product_type" />
+                            </div>
+                            <div class="form-group">
+                                <label for="product_chase">Product Name</label>
+                                <input type="text" class="form-input" name="prname" id="product_chase" />
+                            </div>
+                        </div>
+                        
+                            <div class="form-group">
+                            <label for="product_no">Product Price</label>
+                            <input type="text" class="form-input" name="price" id="product_no" />
+                            </div>
+                            
+                                <div class="form-group">
+                                <label for="product_load">Product Stock</label>
+                                <input type="text" class="form-input" name="stock" id="product_load" />
+                                </div>
+            
+                                    <div class="form-row">
+                                        <div class="name">ADD IMAGE</div>
+                                        <div class="value">
+                                        <div class="input-group js-input-file">
+                                        <input class="input-file" type="file" name="file" id="file">
+                                        </div>
+                                        </div>
+                                     </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'product/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'product/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'product/vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'product/vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+    <script src="{% static 'product/js/main.js' %}"></script>
+</body>
+</html>
